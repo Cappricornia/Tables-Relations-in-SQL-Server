@@ -24,7 +24,8 @@ INSERT INTO [Flights]([FlightID], [PassengerNumber])
 
 
 --2. One-To-Many Relationship
-
+CREATE DATABASE [EntrepreneursDB]
+	
 CREATE TABLE [Entrepreneurs](
 	[EntrepreneurID] INT PRIMARY KEY IDENTITY NOT NULL,
 	[Name] VARCHAR(50) UNIQUE NOT NULL,
@@ -52,6 +53,8 @@ VALUES
 
 
 -- 3. Many-To-Many Relationship 
+CREATE DATABASE [StudentExams]
+	
 CREATE TABLE [Students](
 	[StudentID] INT PRIMARY KEY IDENTITY NOT NULL,
 	[FullName] VARCHAR(100)
@@ -62,7 +65,7 @@ CREATE TABLE [Exams](
 	[ExamName] NVARCHAR(75) NOT NULL
 )
 
--- mapping table - consists of the names of the tables that have been combined, adding compisite PK
+-- mapping table 
 CREATE TABLE [StudentsExams](
 	[StudentID] INT FOREIGN KEY REFERENCES [Students]([StudentID]) NOT NULL,
 	[ExamID] INT FOREIGN KEY REFERENCES [Exams]([ExamID]) NOT NULL,
@@ -98,6 +101,8 @@ INSERT INTO [Exams]([ExamName])
 
 
 -- Problem 4.	Self-Referencing 
+CREATE DATABASE [Tutors]
+	
 CREATE TABLE [Tutors](
 	[TutorID] INT PRIMARY KEY IDENTITY(101, 1) NOT NULL,
 	[Name] VARCHAR(50) NOT NULL,
@@ -131,8 +136,6 @@ INSERT INTO [Tutors] ([Name], [ManagerID])
 -- Problem 6
 
 CREATE DATABASE [NewUniversityDB]
-
-
 
 CREATE TABLE [Majors](
 	[MajorID] INT PRIMARY KEY IDENTITY NOT NULL,
