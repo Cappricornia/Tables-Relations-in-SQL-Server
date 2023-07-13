@@ -133,7 +133,7 @@ INSERT INTO [Tutors] ([Name], [ManagerID])
 		('Oliver Wilson', 102);
 
 
--- Problem 6
+-- Problem 5
 
 CREATE DATABASE [NewUniversityDB]
 
